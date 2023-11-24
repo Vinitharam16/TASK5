@@ -1,67 +1,141 @@
 import React from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import Sidebar from './components/Sidebar/Sidebar';
+import 'boxicons/css/boxicons.css';
+import Input from './components/elements/inputs/Input';
+import Table from './components/Table/Table';
 
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"></link>
 
-// function handleIputchange(e){
-//   setTask(e.target.value);
-// }
+const tabledata = [
+  {
+    invoiceId: "#AHGA68",
+    date: "23/09/2022",
+    customer: "Jacob Marcus",
+    payableAmount: "$100",
+    paidAmount: "$000",
+    due: "$000"
+  },
+  {
+    invoiceId: "#AHGA68",
+    date: "23/09/2022",
+    customer: "Jacob Marcus",
+    payableAmount: "$100",
+    paidAmount: "$000",
+    due: "$000"
+  },
+  {
+    invoiceId: "#AHGA68",
+    date: "23/09/2022",
+    customer: "Jacob Marcus",
+    payableAmount: "$100",
+    paidAmount: "$000",
+    due: "$000"
+  },
+  {
+    invoiceId: "#AHGA68",
+    date: "23/09/2022",
+    customer: "Jacob Marcus",
+    payableAmount: "$100",
+    paidAmount: "$000",
+    due: "$000"
+  },
+  {
+    invoiceId: "#AHGA68",
+    date: "23/09/2022",
+    customer: "Jacob Marcus",
+    payableAmount: "$100",
+    paidAmount: "$000",
+    due: "$000"
+  },
+  {
+    invoiceId: "#AHGA68",
+    date: "23/09/2022",
+    customer: "Jacob Marcus",
+    payableAmount: "$100",
+    paidAmount: "$000",
+    due: "$000"
+  },
+  {
+    invoiceId: "#AHGA68",
+    date: "23/09/2022",
+    customer: "Jacob Marcus",
+    payableAmount: "$100",
+    paidAmount: "$000",
+    due: "$000"
+  },
+  {
+    invoiceId: "#AHGA68",
+    date: "23/09/2022",
+    customer: "Jacob Marcus",
+    payableAmount: "$100",
+    paidAmount: "$000",
+    due: "$000"
+  },
+  {
+    invoiceId: "#AHGA68",
+    date: "23/09/2022",
+    customer: "Jacob Marcus",
+    payableAmount: "$100",
+    paidAmount: "$000",
+    due: "$000"
+  }
+];
 
 
 
 
 function App() {
-  // const [task, setTask] = React.useState("");
-  // export default function RefPlayground(){
-  //   const paraRef = React.useRef(null);
-
-  //   function handleColorChange(color) {
-  //     console.log(paraRef.current);
-  //     paraRef.current.style.color = color;
-  //   }
-  // }
-
   return (
     <div className="App">
       <div className="container">
         <div className='row'>
-        <div class="col-2">
-                <div class="sidebar h-full py-5 d-flex flex-column justify-content-between">
-                    <div class="row mb-5 branding-container">
-                        <h5 class="text-center brand-name">Medico Sales</h5>
-                    </div>
-                    <div class="row nav-links">
-                        <ul>
-                            <li class="nav-link active">
-                                <i class='bx bxs-grid-alt me-3'></i>
-                                <p>Dashboard</p>
-                            </li>
-                            <li class="nav-link">
-                                <i class='bx bx-test-tube me-3'></i>
-                                <p>Labtest</p>
-                            </li>
-                            <li class="nav-link">
-                                <i class='bx bxs-calendar-plus me-3'></i>
-                                <p>Appointment</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer">
-                        <div class="d-flex align-items-center justify-content-start">
-                            <i class='bx bx-help-circle me-3'></i>
-                            <p>Help</p>
-                        </div>
-                    </div>
+          <div className="col-2">
+            <Sidebar />
+          </div>
+          <div className='col-10 p-5'>
+            <div className="row">
+              <div className='col-6'>
+                <Input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+              </div>
+              <div className='col-2'>
+                <i className='bx bx-bell bx-sm'></i>
+              </div>
+            </div>
+            <div className="row">
+              <h3>Sales information</h3>
+            </div>
+            <div className="row mb-5">
+              <div className="col-3">
+                <div className="mb-3">
+                  <Input htmlFor="customerName" type="text" id="customerName" placeholder="Enter customer name" label="Customer" />
                 </div>
+              </div>
+              <div className="col-3">
+                <div className="mb-3">
+                  <Input htmlFor="invoiceId" type="email" className="form-control" id="invoiceId" placeholder="Enter Invoice Id" label="Invoice ID" />
+                </div>
+              </div>
+              <div className="col-3">
+                <div className="mb-3">
+                  <Input htmlFor="startDate" type="date" className="form-control" id="startDate" placeholder="name@example.com" label="Start Date" />
+                </div>
+              </div>
+              <div className="col-3">
+                <div className="mb-3">
+                  <Input htmlFor="endDate" type="date" className="form-control" id="endDate" placeholder="name@example.com" label="End Date" />
+                </div>
+              </div>
             </div>
 
+            <div>
+              <Table data={tabledata} />
+            </div>
+          </div>
         </div>
-
       </div>
     </div>
-
   );
 }
 
