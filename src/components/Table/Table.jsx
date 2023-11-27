@@ -1,13 +1,15 @@
 import React from "react"
+import './Table.css'
+
 export default function Table({ data = [] }) {
     return (
         <div>
             <table className="table">
                 <thead>
                     <tr>
-                        <th scope="col">
+                        <th scope="col" className="selector">
                         <input type="checkbox" 
-                            class="" 
+                            className="form-check-input" 
                             id=""/>
                         </th>
                         <th scope="col">Invoice ID</th>
@@ -21,10 +23,10 @@ export default function Table({ data = [] }) {
                 <tbody>
                     { data && 
                     data.map((d,i) => ( 
-                        <tr>
-                        <th scope="row">
+                        <tr key={`id=${i}`}>
+                        <th scope="row" className="selector">
                             <input type="checkbox" 
-                            class="" 
+                            className="form-check-input" 
                             id=""/>
                         </th>
                         <td>{d.invoiceId}</td>
@@ -34,7 +36,7 @@ export default function Table({ data = [] }) {
                         <td>{d.paidAmount}</td>
                         <td>{d.due}</td>
                     </tr>
-                    ))};
+                    ))}
                     </tbody>
             </table>
 

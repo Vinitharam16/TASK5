@@ -89,24 +89,26 @@ const tabledata = [
 function App() {
   return (
     <div className="App">
-      <div className="container">
+      <div className="container-fluid">
         <div className='row'>
           <div className="col-2">
             <Sidebar />
           </div>
           <div className='col-10 p-5'>
-            <div className="row">
-              <div className='col-6'>
-                <Input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+            <div className="row header">
+              <div className='col-6 search'>
+                <Input className="form-control " type="search" placeholder="Search" aria-label="Search" />
               </div>
-              <div className='col-2'>
-                <i className='bx bx-bell bx-sm'></i>
+              <div className='col-1'>
+                <div className='icon'>
+                <i className='bx bx-bell bx-sm '></i>
+                </div>
               </div>
             </div>
             <div className="row">
-              <h3>Sales information</h3>
+              <h4 className='heading'>Sales information</h4>
             </div>
-            <div className="row mb-5">
+            <div className="row mb-3">
               <div className="col-3">
                 <div className="mb-3">
                   <Input htmlFor="customerName" type="text" id="customerName" placeholder="Enter customer name" label="Customer" />
